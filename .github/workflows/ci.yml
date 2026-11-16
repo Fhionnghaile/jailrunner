@@ -1,0 +1,10 @@
+name: CI
+on: { push: { branches: [main] }, pull_request: {} }
+jobs:
+  prove-the-cage:
+    runs-on: ubuntu-latest   # GitHub runners ship Docker; the hardening flags need no privilege
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash -n jailrunner/run.sh proof/run.sh        # shell syntax
+      - run: docker build -t jailrunner .
+      - run: JR_IMAGE=jailrunner ./proof/run.sh            # every attack must be blocked, or CI fails

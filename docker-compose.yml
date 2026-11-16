@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    image: jailrunner
+    command: ["python", "/app/jailrunner/app.py"]
+    # The API needs the Docker socket to spawn throwaway runner containers.
+    # Trade-off documented in THREAT-MODEL.md (socket = control-plane trust boundary).
+    volumes:
+      - ./:/app:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports: ["127.0.0.1:8080:8080"]
+    working_dir: /app
+    environment: { JR_IMAGE: jailrunner, JR_WALL_CLOCK: "5" }

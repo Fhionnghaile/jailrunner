@@ -1,0 +1,50 @@
+{
+  "defaultAction": "SCMP_ACT_ALLOW",
+  "comment": "Jailrunner: allow-by-default, errno a curated set of privileged/namespace/time syscalls. Layered under --cap-drop ALL + no-new-privileges.",
+  "syscalls": [
+    {
+      "names": [
+        "ptrace",
+        "process_vm_readv",
+        "process_vm_writev",
+        "mount",
+        "umount",
+        "umount2",
+        "pivot_root",
+        "chroot",
+        "reboot",
+        "kexec_load",
+        "kexec_file_load",
+        "init_module",
+        "finit_module",
+        "delete_module",
+        "create_module",
+        "query_module",
+        "bpf",
+        "perf_event_open",
+        "keyctl",
+        "add_key",
+        "request_key",
+        "swapon",
+        "swapoff",
+        "settimeofday",
+        "clock_settime",
+        "adjtimex",
+        "clock_adjtime",
+        "acct",
+        "quotactl",
+        "nfsservctl",
+        "setns",
+        "unshare",
+        "move_pages",
+        "mbind",
+        "set_mempolicy",
+        "kcmp",
+        "lookup_dcookie",
+        "personality"
+      ],
+      "action": "SCMP_ACT_ERRNO",
+      "errnoRet": 1
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+proof/last-run.md
+.DS_Store
