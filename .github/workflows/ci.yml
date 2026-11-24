@@ -1,5 +1,7 @@
 name: CI
-on: { push: { branches: [main] }, pull_request: {} }
+on: { push: { branches: [main] }, pull_request: {}, schedule: [{ cron: "26 6 * * 1" }], workflow_dispatch: {} }
+permissions:
+  contents: read
 jobs:
   prove-the-cage:
     runs-on: ubuntu-latest   # GitHub runners ship Docker; the hardening flags need no privilege

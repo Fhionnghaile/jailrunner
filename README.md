@@ -4,7 +4,7 @@
 > **Executes untrusted code in a throwaway container that is *proven* to contain it.**  
 > **Result:** Self-asserting proof harness: read-only root, blocked egress, CPU/mem/pid caps, and a default-deny seccomp allowlist — each failure demonstrated on a real run.  
 > **Reproduce:** `make proof   # + bash tools/seccomp-selftest/run-selftest.sh`  
-> ![CI](https://github.com/fhionnghaile/jailrunner/actions/workflows/ci.yml/badge.svg)
+> ![CI](https://github.com/fhionnghaile/jailrunner/actions/workflows/ci.yml/badge.svg) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Fhionnghaile/jailrunner/badge)](https://scorecard.dev/viewer/?uri=github.com/Fhionnghaile/jailrunner)
 >
 > **What this is worth:** Lets a product safely run code it doesn't trust — the core of any autograder, sandbox or plugin system — without betting the host on it.
 
